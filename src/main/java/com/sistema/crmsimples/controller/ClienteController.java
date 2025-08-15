@@ -1,6 +1,7 @@
 package com.sistema.crmsimples.controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,8 +16,9 @@ import com.sistema.crmsimples.model.Clientes;
 import com.sistema.crmsimples.service.ClienteService;
 
 
+
 @RestController
-@RequestMapping("/crm")
+@RequestMapping("/clientes")
 public class ClienteController {
 
     @Autowired
@@ -36,6 +38,14 @@ public class ClienteController {
         List<Clientes> clientes = clienteService.listarTodos();
         return ResponseEntity.ok(clientes);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity <Clientes> listarClientesPorId(UUID id) {
+       return clienteService.listarPorId(id)
+        .map(ResponseEntity::ok) // Se o Optional tiver valor, retorna 200 OK
+                .orElseGet(() -> ResponseEntity.notFound().build()); // Se for vazio, retorna 404 Not Found
+    }
+    
     
     
 

@@ -5,11 +5,13 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -32,10 +34,14 @@ private UUID id;	                    //PK	Auto incremento
 private String nome;	//VARCHAR	Obrigatório, mínimo 3 caracteres
 
 @Email
+@NotNull
+@NotBlank
+@Column(unique=true)
 private String email;	//VARCHAR	Obrigatório, único
 
 private String telefone;	//VARCHAR	Opcional, validação DDI+DDD se informado validar na service
 
+@Column(unique=true)
 private String cpf;      //VARCHAR	Obrigatório, único, formato e dígitos válidos validar na service
 
 private String status;	//VARCHAR(20)	ATIVO, INATIVO ou PROSPECT

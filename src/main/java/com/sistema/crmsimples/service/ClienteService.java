@@ -31,6 +31,8 @@ public class ClienteService {
     public Optional<Clientes> listarPorId(UUID id) {
         return clienteRepository.findById(id);
     }
+
+    
     
 
 }
