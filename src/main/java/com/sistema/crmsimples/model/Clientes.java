@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -19,6 +20,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "clientes")
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Clientes {
 
 @Id
