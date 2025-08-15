@@ -72,36 +72,3 @@ Proibido atualizar o CPF após criação.
 
 atualizado_em deve ser modificado sempre que houver alteração de dados.
 
-🛠 Tecnologias Sugeridas
-
-Java / Spring Boot ou .NET Core
-
-Banco de Dados: PostgreSQL ou MySQL
-
-ORM: JPA / Hibernate ou Entity Framework
-
-Validações: Bean Validation (Java) ou Data Annotations (.NET)
-
-Testes: JUnit / xUnit
-
-Documentação: Swagger / OpenAPI
-
-▶️ Como Executar
-
-Clonar o repositório
-
-git clone https://github.com/seu-usuario/gestao-clientes.git
-cd gestao-clientes
-
-
-Configurar o banco de dados no arquivo de configuração (application.properties ou appsettings.json).
-
-Instalar dependências
-
-# Java (Maven)
-mvn install
-
-# Java
-mvn spring-boot:run
-
-
